@@ -11,6 +11,12 @@ namespace Day2
     public class SimpleCalculator
     {
         #region Functionality
+        /// <summary>
+        /// Reads two numbers and an operator, then performs the specified arithmetic operation.
+        /// </summary>
+        /// <remarks>
+        /// Supports +, -, *, / with validation; handles division by zero.
+        /// </remarks>
         public static void Calculate()
         {
             #region Declarations

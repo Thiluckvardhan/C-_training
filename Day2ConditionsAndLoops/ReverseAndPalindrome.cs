@@ -10,6 +10,12 @@ namespace Day2
     public class ReverseAndPalindrome
     {
         #region Functionality
+        /// <summary>
+        /// Reads a number, reverses it, and checks if it is a palindrome.
+        /// </summary>
+        /// <remarks>
+        /// Reversal uses repeated modulo 10 and division by 10 operations.
+        /// </remarks>
         public static void CheckPalindrome()
         {
             #region Declarations

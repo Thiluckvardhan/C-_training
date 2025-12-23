@@ -12,6 +12,12 @@ namespace Day2
     public class FactorialLargeNumbers
     {
         #region Functionality
+        /// <summary>
+        /// Reads an integer from the console and prints its factorial using BigInteger.
+        /// </summary>
+        /// <remarks>
+        /// Validates input and handles non-negative numbers; outputs factorial value and digit count.
+        /// </remarks>
         public static void CalculateFactorial()
         {
             #region Declarations

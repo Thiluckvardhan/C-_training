@@ -1,5 +1,10 @@
+using System;
+
 namespace Day2
 {
+    /// <summary>
+    /// Determines if a given year is a leap year.
+    /// </summary>
     class LeapYearCheck
 {
     /// <summary>

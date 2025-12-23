@@ -10,6 +10,12 @@ namespace Day2
     public class SumOfDigits
     {
         #region Functionality
+        /// <summary>
+        /// Reads a number and computes its digital root by repeatedly summing digits.
+        /// </summary>
+        /// <remarks>
+        /// Continues until a single digit is obtained; handles negative inputs by taking absolute value.
+        /// </remarks>
         public static void CalculateDigitalRoot()
         {
             #region Declarations

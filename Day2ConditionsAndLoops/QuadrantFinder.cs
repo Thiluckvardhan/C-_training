@@ -1,7 +1,18 @@
+using System;
+
 namespace Day2
 {
+    /// <summary>
+    /// Determines the quadrant in which a point lies based on X and Y coordinates.
+    /// </summary>
     class QuadrantFinder
 {
+    /// <summary>
+    /// Reads coordinate values and prints the corresponding quadrant or axis/origin.
+    /// </summary>
+    /// <remarks>
+    /// Validates numeric input and uses conditional checks to categorize the point's position.
+    /// </remarks>
     public static void Finder()
     {
         #region Varaible Declaration

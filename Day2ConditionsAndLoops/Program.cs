@@ -1,10 +1,17 @@
 ﻿using System;
 using Day2;
 
+/// <summary>
+/// Entry point for running Day2 conditions and loops examples.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Application entry point. Uncomment lines to run specific examples.
+    /// </summary>
     static void Main()
     {
+        #region Method Logic
         // DAY2
         // HeightCategory.Height();
         // LargestofThree.Largest();
@@ -38,8 +45,7 @@ class Program
         // MenuSystem.ShowMenu();
         // StrongNumber.CheckStrong();
         // SearchWithGoto.Search();
-
-
+        #endregion
     }
 }
 

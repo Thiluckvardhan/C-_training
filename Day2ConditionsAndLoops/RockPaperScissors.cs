@@ -14,6 +14,12 @@ namespace Day2
     public class RockPaperScissors
     {
         #region Functionality
+        /// <summary>
+        /// Runs a two-player Rock, Paper, Scissors game and determines the winner.
+        /// </summary>
+        /// <remarks>
+        /// Reads choices from both players and applies game rules using nested conditionals.
+        /// </remarks>
         public static void PlayGame()
         {
             #region Declarations

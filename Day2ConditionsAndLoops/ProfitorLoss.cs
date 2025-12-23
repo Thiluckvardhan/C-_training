@@ -11,6 +11,12 @@ namespace Day2
     public class ProfitorLoss
     {
         #region Functionality
+        /// <summary>
+        /// Reads cost and selling prices and prints profit/loss and percentage.
+        /// </summary>
+        /// <remarks>
+        /// Handles division-by-zero by reporting 0% when cost price is 0.
+        /// </remarks>
         public static void CalculateAndDisplayResult()
         {
             #region Declarations

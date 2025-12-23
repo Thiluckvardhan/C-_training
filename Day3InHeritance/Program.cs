@@ -1,10 +1,17 @@
 ﻿using System;
 using Day3;
 
+/// <summary>
+/// Entry point for Day3 inheritance examples demonstrating Person, Man, and Woman classes.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Application entry point. Creates instances and displays details using PersonHelper.
+    /// </summary>
     static void Main()
     {
+        #region Method Logic
         // DAY3
         // Student s1=new Student()
         // {
@@ -30,7 +37,7 @@ class Program
         Console.WriteLine(PersonHelper.GetDetails(person));
         Console.WriteLine(PersonHelper.GetDetails(man));
         Console.WriteLine(PersonHelper.GetDetails(woman));
-
+        #endregion
     }
 }
 

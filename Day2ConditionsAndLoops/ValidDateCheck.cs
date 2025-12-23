@@ -1,13 +1,28 @@
+using System;
+
 namespace Day2
 {
-
+    /// <summary>
+    /// Validates whether a given day, month, and year form a valid date.
+    /// </summary>
     class ValidDateCheck
     {
+        /// <summary>
+        /// Checks if the date is valid considering month lengths and leap years.
+        /// </summary>
+        /// <remarks>
+        /// Leap year logic: divisible by 400, or divisible by 4 and not by 100.
+        /// </remarks>
         public static void IsValid()
         {
+            #region Variables
+            // Date components to validate
             int day = 0, month = 0, year = 0;
             bool valid = true;
+            #endregion
 
+            #region Method Logic
+            // Validate year
             if (year <= 0)
                 valid = false;
             else if (month < 1 || month > 12)
@@ -54,6 +69,7 @@ namespace Day2
             {                
                 Console.WriteLine("Invalid Date");
             }
+            #endregion
         }
     }
 }

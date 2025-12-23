@@ -10,6 +10,12 @@ namespace Day2
     public class SearchWithGoto
     {
         #region Functionality
+        /// <summary>
+        /// Searches for a target value in a 3D array and uses goto to exit nested loops.
+        /// </summary>
+        /// <remarks>
+        /// Demonstrates the goto statement for efficient exit from deeply nested loops.
+        /// </remarks>
         public static void Search()
         {
             #region Declarations

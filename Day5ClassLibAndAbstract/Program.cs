@@ -2,10 +2,18 @@
 using Day5;
 using MathsLib;
 using ScienceLib;
+
+/// <summary>
+/// Entry point for Day5 examples demonstrating class libraries and abstraction.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Application entry point. Demonstrates class library usage and abstract classes.
+    /// </summary>
     static void Main()
     {
+        #region Method Logic
         // Day5  
         // Day5 is about class Libraries so i have created a ClassLib folder outside MYCONSOLEAPP Folder 
         // To reffernce the MathsLib.csproj and ScienceLib.csproj first add those csproj files to the MYCONSOLE.sln file. To do that
@@ -24,7 +32,7 @@ class Program
         // inemp.CalcTax();
         // USEmployee usemp=new USEmployee();
         // usemp.CalcTax();
-        
+        #endregion
     }
 }
 

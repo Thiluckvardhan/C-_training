@@ -10,6 +10,12 @@ namespace Day2
     public class DiamondPattern
     {
         #region Functionality
+        /// <summary>
+        /// Reads the number of rows from the console and prints a diamond pattern.
+        /// </summary>
+        /// <remarks>
+        /// Validates that rows is positive; the pattern is built using spaces and asterisks.
+        /// </remarks>
         public static void PrintDiamond()
         {
             #region Declarations

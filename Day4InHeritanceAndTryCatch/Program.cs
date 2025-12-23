@@ -1,11 +1,17 @@
 ﻿using System;
 using Day4;
 
+/// <summary>
+/// Entry point for Day4 examples demonstrating inheritance, try-catch, and constructors.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Application entry point. Uncomment lines to run specific examples.
+    /// </summary>
     static void Main()
     {
-
+        #region Method Logic
         // Day4
         // try{
         // Visitor vis=new Visitor(20,"Thiluck");
@@ -38,8 +44,7 @@ class Program
         System.Console.WriteLine(father.InterestOn());
         Son son=new Son();
         System.Console.WriteLine(son.InterestOn());
-
-
+        #endregion
     }
 }
 

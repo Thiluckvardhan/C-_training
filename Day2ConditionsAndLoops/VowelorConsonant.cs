@@ -1,5 +1,10 @@
+using System;
+
 namespace Day2
 {
+    /// <summary>
+    /// Determines whether a letter is a vowel or consonant.
+    /// </summary>
     class VowelorConsonant
     {
         /// <summary>

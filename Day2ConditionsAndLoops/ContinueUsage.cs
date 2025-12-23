@@ -9,6 +9,12 @@ namespace Day2
     public class ContinueUsage
     {
         #region Functionality
+        /// <summary>
+        /// Prints numbers from 1 to 50, skipping multiples of 3 using 'continue'.
+        /// </summary>
+        /// <remarks>
+        /// No parameters are accepted; outputs are written to the console.
+        /// </remarks>
         public static void PrintNumbers()
         {
             #region Declarations

@@ -1,10 +1,18 @@
+using System;
+
 namespace Day2
 {
+    /// <summary>
+    /// Classifies triangles based on side lengths.
+    /// </summary>
     class TriangleType
 {
     /// <summary>
-    /// The Method Checks For Type of Triangle
+    /// Reads three side lengths and determines the triangle type: Equilateral, Isosceles, or Scalene.
     /// </summary>
+    /// <remarks>
+    /// Validates that sides can form a valid triangle before classification.
+    /// </remarks>
     public static void Check()
     {
         #region Variable Declaration

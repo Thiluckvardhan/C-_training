@@ -10,6 +10,12 @@ namespace Day2
     public class MenuSystem
     {
         #region Functionality
+        /// <summary>
+        /// Displays an interactive menu and handles user choices until exit is selected.
+        /// </summary>
+        /// <remarks>
+        /// Options include greeting, square calculation, even/odd check, and current date/time display.
+        /// </remarks>
         public static void ShowMenu()
         {
             #region Declarations

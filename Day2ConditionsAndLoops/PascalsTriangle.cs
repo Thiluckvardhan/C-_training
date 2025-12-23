@@ -10,6 +10,12 @@ namespace Day2
     public class PascalsTriangle
     {
         #region Functionality
+        /// <summary>
+        /// Reads the number of rows and prints Pascal's Triangle accordingly.
+        /// </summary>
+        /// <remarks>
+        /// Computes coefficients iteratively using the relation C(n,k) = C(n,k-1) * (n-k+1)/k.
+        /// </remarks>
         public static void PrintTriangle()
         {
             #region Declarations

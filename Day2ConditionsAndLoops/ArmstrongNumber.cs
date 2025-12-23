@@ -10,6 +10,12 @@ namespace Day2
     public class ArmstrongNumber
     {
         #region Functionality
+        /// <summary>
+        /// Reads an integer from the console and prints whether it is an Armstrong number.
+        /// </summary>
+        /// <remarks>
+        /// No parameters are accepted; input is read from the console.
+        /// </remarks>
         public static void CheckArmstrong()
         {
             #region Declarations

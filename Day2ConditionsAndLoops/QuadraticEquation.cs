@@ -1,7 +1,18 @@
+using System;
+
 namespace Day2
 {
+    /// <summary>
+    /// Solves quadratic equations of the form ax² + bx + c = 0.
+    /// </summary>
     class QuadraticEquation
 {
+    /// <summary>
+    /// Reads coefficients a, b, c and computes the roots using the discriminant method.
+    /// </summary>
+    /// <remarks>
+    /// Handles three cases: distinct real roots, equal roots, and no real roots (complex).
+    /// </remarks>
     public static void Equate()
     {
 

@@ -11,6 +11,12 @@ namespace Day2
     public class StrongNumber
     {
         #region Functionality
+        /// <summary>
+        /// Reads a number and checks if it is a Strong number.
+        /// </summary>
+        /// <remarks>
+        /// Computes factorial of each digit and compares the sum to the original number.
+        /// </remarks>
         public static void CheckStrong()
         {
             #region Declarations

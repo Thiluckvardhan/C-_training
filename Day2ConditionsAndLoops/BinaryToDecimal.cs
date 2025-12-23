@@ -11,6 +11,12 @@ namespace Day2
     public class BinaryToDecimal
     {
         #region Functionality
+        /// <summary>
+        /// Reads a binary string from the console and prints its decimal equivalent.
+        /// </summary>
+        /// <remarks>
+        /// Validates that the input contains only '0' and '1'; computes value from right to left.
+        /// </remarks>
         public static void Convert()
         {
             #region Declarations

@@ -9,6 +9,12 @@ namespace Day2
     public class PrimeNumber
     {
         #region Functionality
+        /// <summary>
+        /// Reads a number and prints whether it is prime.
+        /// </summary>
+        /// <remarks>
+        /// Tests divisibility up to √n and short-circuits on first divisor found.
+        /// </remarks>
         public static void CheckPrime()
         {
             #region Declarations

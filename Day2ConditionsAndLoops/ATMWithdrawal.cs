@@ -11,6 +11,12 @@ namespace Day2
     /// </summary>
     class ATMWithdrawal
     {
+        /// <summary>
+        /// Simulates an ATM withdrawal flow: card insertion, PIN validation, and balance check.
+        /// </summary>
+        /// <remarks>
+        /// Reads PIN from the console; amounts are hard-coded for demonstration.
+        /// </remarks>
         public static void ATMFunctions()
         {
             #region variable declaration

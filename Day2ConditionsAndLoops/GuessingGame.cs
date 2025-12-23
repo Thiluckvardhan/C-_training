@@ -10,6 +10,12 @@ namespace Day2
     public class GuessingGame
     {
         #region Functionality
+        /// <summary>
+        /// Runs the interactive number guessing game until the correct number is guessed.
+        /// </summary>
+        /// <remarks>
+        /// Generates a random number between 1 and 100 and provides hints after each guess.
+        /// </remarks>
         public static void PlayGame()
         {
             #region Declarations

@@ -11,6 +11,12 @@ namespace Day2
     public class GCDandLCM
     {
         #region Functionality
+        /// <summary>
+        /// Reads two integers and prints their GCD and LCM.
+        /// </summary>
+        /// <remarks>
+        /// Uses the Euclidean algorithm for GCD and the product/gcd formula for LCM.
+        /// </remarks>
         public static void Calculate()
         {
             #region Declarations

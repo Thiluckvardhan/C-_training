@@ -1,3 +1,4 @@
+using System;
 /// <summary>
 /// Admission Eligibility Checker
 /// 
@@ -14,15 +15,26 @@
 
 namespace Day2
 {
+    /// <summary>
+    /// Provides functionality to evaluate admission eligibility based on subject marks.
+    /// </summary>
     class AdmissionEligibility
 {
+    /// <summary>
+    /// Reads marks for Mathematics, Chemistry, and Physics, then prints whether the student is eligible.
+    /// </summary>
+    /// <remarks>
+    /// This method does not accept parameters; it reads values from the console and performs validation.
+    /// </remarks>
     public static void EligibilityCheck()
     {
-        #region Variable Declaration
+        #region Variables
+        // Holds marks for Mathematics, Chemistry, Physics and the computed total
         double math_marks = 0.0, chem_marks = 0.0, phy_marks = 0.0, total_marks = 0.0;
         #endregion
 
-        #region Taking Input
+        #region Method Logic
+        // Read and validate input for each subject
         Console.Write("Enter the Marks obtained in maths: ");
         if (!double.TryParse(Console.ReadLine(), out math_marks))
         {
@@ -41,9 +53,8 @@ namespace Day2
             Console.WriteLine("Invalid marks");
             return;
         }
-        #endregion
-
-        #region Eligibility Check 
+        
+        // Compute total and check eligibility using given criteria
         total_marks = math_marks + chem_marks + phy_marks;
         if (total_marks >= 180 || math_marks + phy_marks >= 140)
         {

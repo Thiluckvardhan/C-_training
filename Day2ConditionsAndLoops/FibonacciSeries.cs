@@ -10,6 +10,12 @@ namespace Day2
     public class FibonacciSeries
     {
         #region Functionality
+        /// <summary>
+        /// Reads the number of terms and prints the Fibonacci sequence up to that count.
+        /// </summary>
+        /// <remarks>
+        /// Uses iterative computation with two pointers to generate the sequence.
+        /// </remarks>
         public static void DisplaySeries()
         {
             #region Declarations
