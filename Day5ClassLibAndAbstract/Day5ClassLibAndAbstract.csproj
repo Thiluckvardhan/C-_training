@@ -10,5 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ClassLib\MathsLib\MathsLib.csproj" />
     <ProjectReference Include="..\ClassLib\ScienceLib\ScienceLib.csproj" />
+    <ProjectReference Include="..\ClassLib\PaymentLIb\PaymentLib.csproj" />
   </ItemGroup>
 </Project>

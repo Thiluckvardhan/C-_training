@@ -2,7 +2,7 @@
 using Day5;
 using MathsLib;
 using ScienceLib;
-
+using PaymentLib;
 /// <summary>
 /// Entry point for Day5 examples demonstrating class libraries and abstraction.
 /// </summary>
@@ -13,7 +13,6 @@ class Program
     /// </summary>
     static void Main()
     {
-        #region Method Logic
         // Day5  
         // Day5 is about class Libraries so i have created a ClassLib folder outside MYCONSOLEAPP Folder 
         // To reffernce the MathsLib.csproj and ScienceLib.csproj first add those csproj files to the MYCONSOLE.sln file. To do that
@@ -24,15 +23,20 @@ class Program
         // then click on MYCONSOLEAPP.csproj and click add new reffernce and add the two files
 
         // Calling The MathsLib file
-        Maths math=new Maths();
-        math.add(5,8);
+        // Maths math=new Maths();
+        // math.add(5,8);
 
         // Abstraction Example
         // IndianEmployee inemp=new IndianEmployee();
         // inemp.CalcTax();
         // USEmployee usemp=new USEmployee();
         // usemp.CalcTax();
-        #endregion
+
+        // example 2
+
+        Payment p = new UpiPayment(499.00m, "ittechgenie@upi");
+        p.Pay();
+        p.PrintReceipt();
     }
 }
 
