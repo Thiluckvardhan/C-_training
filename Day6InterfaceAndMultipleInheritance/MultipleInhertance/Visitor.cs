@@ -7,14 +7,10 @@ namespace Day6
     /// </summary>
     interface IVegEatter
     {
-        /// <summary>
-        /// Method to consume vegetarian food
-        /// </summary>
+        // Method to consume vegetarian food
         public void Vegeats();
 
-        /// <summary>
-        /// Method to get taste description of vegetarian food
-        /// </summary>
+        // Method to get taste description of vegetarian food
         public void GetTaste();
     }
 
@@ -23,14 +19,10 @@ namespace Day6
     /// </summary>
     interface INonVegEatter
     {
-        /// <summary>
-        /// Method to consume non-vegetarian food
-        /// </summary>
+        // Method to consume non-vegetarian food
         public void NonVegeats();
 
-        /// <summary>
-        /// Method to get taste description of non-vegetarian food
-        /// </summary>
+        // Method to get taste description of non-vegetarian food
         public void GetTaste();
     }
 
@@ -46,17 +38,13 @@ namespace Day6
     {
         #region Non-Vegetarian Implementation
 
-        /// <summary>
-        /// Implementation of non-vegetarian eating from INonVegEatter interface
-        /// </summary>
+        // Implementation of non-vegetarian eating from INonVegEatter interface
         public void NonVegeats()
         {
             Console.WriteLine("Visitor ate NonVeg Food");
         }
 
-        /// <summary>
-        /// Implementation of GetTaste for non-vegetarian food from INonVegEatter interface
-        /// </summary>
+        // Implementation of GetTaste for non-vegetarian food from INonVegEatter interface
         void INonVegEatter.GetTaste()
         {
             Console.WriteLine("Getting Nonveg Taste");
@@ -66,17 +54,13 @@ namespace Day6
 
         #region Vegetarian Implementation
 
-        /// <summary>
-        /// Implementation of vegetarian eating from IVegEatter interface
-        /// </summary>
+        // Implementation of vegetarian eating from IVegEatter interface
         public void Vegeats()
         {
             Console.WriteLine("Visitor ate Veg Food");
         }
 
-        /// <summary>
-        /// Implementation of GetTaste for vegetarian food from IVegEatter interface
-        /// </summary>
+        // Implementation of GetTaste for vegetarian food from IVegEatter interface
         void IVegEatter.GetTaste()
         {
             Console.WriteLine("Getting Veg Taste");
