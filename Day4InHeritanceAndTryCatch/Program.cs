@@ -13,10 +13,15 @@ class Program
     {
         #region Method Logic
         // Day4
-        // try{
-        // Visitor vis=new Visitor(20,"Thiluck");
+
+        //This also explains this keyword
+        //  try
+        // {
+        //     Visitor vis = new Visitor(20, "Thiluck");
+
         // }
-        // catch(Exception ex){
+        // catch (Exception ex)
+        // {
         //     Console.WriteLine(ex.Message);
         // }
 
@@ -40,9 +45,9 @@ class Program
         // SalesAccount salesAccount = new SalesAccount() { AccountId = 2, Name = "Balu", SalesInfo = "" };
         // var result1 = salesAccount.GetSalesAccountDetails();
 
-        Father father=new Father();
+        Father father = new Father();
         System.Console.WriteLine(father.InterestOn());
-        Son son=new Son();
+        Son son = new Son();
         System.Console.WriteLine(son.InterestOn());
         #endregion
     }

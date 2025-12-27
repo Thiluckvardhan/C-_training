@@ -14,16 +14,19 @@ class Program
 
         // Multiple Inheritance Example
 
-        Visitor vis = new Visitor();
-        vis.NonVegeats();
-        vis.Vegeats();
+        // Visitor vis = new Visitor();
+        // vis.NonVegeats();
+        // vis.Vegeats();
 
         // If you have two Methods with same name inside a multiple inherited class do this 
 
-        IVegEatter veg = new Visitor();
-        INonVegEatter nonveg = new Visitor();
+        // IVegEatter veg = new Visitor();
+        // INonVegEatter nonveg = new Visitor();
 
-        veg.GetTaste();
-        nonveg.GetTaste();
+        // veg.GetTaste();
+        // nonveg.GetTaste();
+
+        HOD hod=new HOD(1,"Thiluck");
+        
     }
 }
