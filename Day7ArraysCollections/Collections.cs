@@ -24,19 +24,19 @@ namespace Day7
             #endregion
 
             #region Stack Example
-            Stack myStack = [];
-            myStack.Push(1);
-            myStack.Push(2);
-            myStack.Push("Stack Item");
-            myStack.Pop();
+            //Stack myStack = [];
+            //myStack.Push(1);
+            //myStack.Push(2);
+            //myStack.Push("Stack Item");
+            //myStack.Pop();
             #endregion
 
             #region Queue Example
-            Queue q = [];
-            q.Enqueue("First");
-            q.Enqueue(2);
-            q.Enqueue(3.5);
-            q.Dequeue();
+            //Queue q = [];
+            //q.Enqueue("First");
+            //q.Enqueue(2);
+            //q.Enqueue(3.5);
+            //q.Dequeue();
             #endregion
 
             #region Generic List Examples
