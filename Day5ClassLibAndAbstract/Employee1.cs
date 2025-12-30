@@ -9,7 +9,7 @@ namespace Day5
     {
         #region Abstract Methods
         /// <summary>
-        /// Calculates tax for the employee. Must be implemented by derived classes.
+        /// Calculate tax for the employee. Must be implemented by derived classes.
         /// </summary>
         public abstract void CalcTax();
         #endregion
