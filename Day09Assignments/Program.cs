@@ -36,16 +36,33 @@ public class Program
         #endregion
 
         #region Method OverLoading Example
-        BillingSystem billingSystem= new BillingSystem();
-        billingSystem.CalcBill(2000,28,500);
-        billingSystem.CalcBill(2000.00,14.5,500);
+        // BillingSystem billingSystem= new BillingSystem();
+        // billingSystem.CalcBill(2000,28,500);
+        // billingSystem.CalcBill(2000.00,14.5,500);
         #endregion
 
         #region Method OverRiding Example
-        Insurance insurance=new HealthInsurance();
-        insurance.CalcInsurance(5000);
-        insurance=new LifeInsurance();
-        insurance.CalcInsurance(5000);
+        // Insurance insurance=new HealthInsurance();
+        // insurance.CalcInsurance(5000);
+        // insurance=new LifeInsurance();
+        // insurance.CalcInsurance(5000);
+        #endregion
+
+        #region Composition Example
+        Product Iphone=new("Iphone",79000);
+        Product ToothPaste=new("Tooth Paste",200);
+        Product Chocolates=new("Chocolates",800);
+        Product Laptop=new("Lenovo Laptop",85000);
+
+        Order order1=new();
+        order1.order(Iphone,2);
+        order1.order(Chocolates,50);
+        order1.OrderAmount();
+
+        Order order2=new();
+        order2.order(ToothPaste,2);
+        order2.order(Laptop,3);
+        order2.OrderAmount();
         #endregion
     }
 }
