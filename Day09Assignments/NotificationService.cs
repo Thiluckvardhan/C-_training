@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Day9Indexer
 {
-    interface INotification
+    public interface INotification
     {
         void SendNotification(string message);
     }
@@ -16,8 +14,8 @@ namespace Day9Indexer
             Console.WriteLine("Email Notification: " + message);
         }
     }
-    
-    public class SMS:INotification
+
+    public class SMS : INotification
     {
         public void SendNotification(string message)
         {
@@ -30,6 +28,21 @@ namespace Day9Indexer
         public void SendNotification(string message)
         {
             Console.WriteLine("WhatsApp Notification: " + message);
+        }
+    }
+
+    public class NotificationService
+    {
+        private readonly INotification _notification;
+
+        public NotificationService(INotification notification)
+        {
+            _notification = notification;
+        }
+
+        public void Notify(string message)
+        {
+            _notification.SendNotification(message);
         }
     }
 }

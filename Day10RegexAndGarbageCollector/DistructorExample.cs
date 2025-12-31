@@ -1,13 +1,14 @@
+using System.Collections.Generic;
 namespace Day10
 {
     public class DistructorExample:IDisposable
     {
-        List<int> list=[];
+        List<int> list=new List<int>();
 
         public void Dispose()
         {
-            List.Clear();
-            List = null;
+            list.Clear();
+            list = null;
         }
     }
 }
