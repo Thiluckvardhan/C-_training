@@ -1,0 +1,55 @@
+XML Schema file is created with  .xs extension
+
+publisher and Subcriber
+
+What is an .xs file?
+The .xs file is essentially an XML Schema Definition (XSD) file. It defines the rules for the structure and content of an XML document,
+ specifying elements, attributes, data types, and relationships [1]. 
+
+ Why is it used for publisher and subscriber?
+In a publisher-subscriber (pub/sub) architecture, one component (the publisher) sends messages, and other components (the subscribers) receive those messages .The .xs file is crucial for this model because it ensures interoperability and data integrity: 
+
+
+DeSerialization ?
+Converting any serialized data to object type.
+
+
+Object to XML Serialization in C#
+
+XML Serialization converts a C# object into XML format
+XML is used for data storage and data transfer
+C# uses XmlSerializer for XML serialization
+
+Why Do We Use XML Serialization?
+To save object data in a readable format
+To send data between applications
+To store configuration or backup data
+
+Where Is XML Used?
+Web services (SOAP)
+Configuration files
+Data sharing between systems
+
+Class and properties must be public - XmlSerializer works outside your class, It uses reflection to read data
+
+Class must have a parameterless constructor - During deserialization, XML is converted back into an object, XmlSerializer first creates an empty object
+
+Steps:
+Create a class
+Create an object
+Use XmlSerializer
+Call Serialize()
+Store XML in a string or file
+
+We use StringWriter because XmlSerializer requires a TextWriter, and StringBuilder is not a writer.
+
+Simple analogy
+XmlSerializer → needs a pen
+StringWriter → acts like a pen
+StringBuilder → is just the paper
+
+Propertioes are converted to XMl
+Functions are not considered in Serialization
+
+The xml serialization will not work for Dictionary,Interfaces,Multidimensional Arrays,private fields /properties,read only properties,
+ Objects without a public parameterless constructor, Methods and Indexers

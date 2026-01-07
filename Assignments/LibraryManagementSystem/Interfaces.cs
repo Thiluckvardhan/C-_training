@@ -1,17 +1,12 @@
-/// <summary>
-/// Interface contracts for reservations and notifications in the library domain.
-/// </summary>
-namespace LibraryManagementSystem
+namespace Interfaces
 {
-    #region Interfaces
     public interface IReservable
-    {
-        void Reserve();
-    }
+{
+    public void Reserve();
+}
 
-    public interface INotifiable
-    {
-        void Notify(string message);
-    }
-    #endregion
+public interface INotifiable
+{
+    public void Notify();
+}
 }
