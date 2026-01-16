@@ -1,5 +1,6 @@
 namespace Day18
 {
+    /// <summary>Manages sold stationery items and provides lookups for counts, min, max, and sorted views.</summary>
     public class Question1
     {
         public static SortedDictionary<string, long> itemDetails = new SortedDictionary<string, long>
@@ -14,6 +15,7 @@ namespace Day18
         public SortedDictionary<string, long> FindItemDetails(long soldCount)
         {
             SortedDictionary<string, long> sd = new();
+            // Keep only items whose sold count matches the requested value
             foreach (var item in itemDetails)
             {
                 if (item.Value == soldCount)
@@ -32,6 +34,7 @@ namespace Day18
             string maxkey = "";
             List<string> list = new();
 
+            // Single pass to track current min and max sold items
             foreach (var item in itemDetails)
             {
                 if (item.Value < mini)
@@ -56,11 +59,13 @@ namespace Day18
         {
             SortedDictionary<long, string> sd = new();
             Dictionary<string, long> dictionary = new();
+            // Reverse-key sort: count -> item name to get ascending by count
             foreach (var item in itemDetails)
             {
                 sd.Add(item.Value, item.Key);
             }
 
+            // Flip back to name -> count but now ordered by count
             foreach (var item in sd)
             {
                 dictionary.Add(item.Value, item.Key);

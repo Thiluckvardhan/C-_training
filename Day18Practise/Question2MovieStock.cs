@@ -1,6 +1,7 @@
 using System.Linq;
 namespace Day18
 {
+    /// <summary>Represents a movie entry with title, artist, genre, and rating details.</summary>
     public class Movie
     {
         public string? Title { get; set; }
@@ -9,6 +10,7 @@ namespace Day18
         public int Ratings { get; set; }
     }
 
+    /// <summary>Stores movie records and supports adding and querying by genre or rating order.</summary>
     public class Question2
     {
         #region Question2
@@ -16,6 +18,7 @@ namespace Day18
         public void AddMovie(string MovieDetails)
         {
             var details = MovieDetails.Split(',');
+            // Split comma-delimited input into a strongly typed movie object
             Movie movie = new Movie
             {
                 Title = details[0].Trim(),
@@ -32,6 +35,7 @@ namespace Day18
         public List<Movie> viewMoviesByGenre(string genre)
         {
             List<Movie> movie = new();
+            // Filter movies that match the requested genre
             foreach (var item in movielist)
             {
                 if (item.Genre == genre)
@@ -44,6 +48,7 @@ namespace Day18
 
         public List<Movie> ViewMoviesByRatings()
         {
+            // Return movies ordered from lowest to highest rating
             return movielist.OrderBy(m => m.Ratings).ToList();
         }
         #endregion

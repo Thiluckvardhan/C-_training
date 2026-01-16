@@ -1,22 +1,25 @@
 using System.Collections;
 namespace Day18
 {
+    /// <summary>Holds yoga member health metrics and calculated BMI.</summary>
     public class MedicationCenter
     {
         public int MemberId { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public string Goal { get; set; }
+        public string? Goal { get; set; }
         public double BMI { get; set; }
     }
     
+    /// <summary>Maintains yoga member list, computes BMI, and determines applicable fees and goals.</summary>
     public class Question4
     {
         public static ArrayList memberList=new();
 
         public void AddYogaMember(int memberId,int age,double weight,double height,string goal)
         {
+            // Build a new member record with the provided metrics
             MedicationCenter medicationCenter=new();
             medicationCenter.MemberId=memberId;
             medicationCenter.Age=age;
@@ -32,6 +35,7 @@ namespace Day18
             {
                 return -1;
             }
+            // Compute BMI for the matching member and store it
             foreach(MedicationCenter item in memberList)
             {
                 if (item.MemberId == memberId)
@@ -46,6 +50,7 @@ namespace Day18
         public int CalculateYogaFee(int memberId)
         {
             int cost=0;
+            // Derive goal and fee based on calculated BMI brackets
             foreach(MedicationCenter item in memberList)
             {
                 if (item.MemberId == memberId)
