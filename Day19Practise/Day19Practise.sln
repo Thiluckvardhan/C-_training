@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Question1MovieLibrary", "Question1MovieLibrary", "{9F550A88-4AF6-4307-0E3D-A1CD56108340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieLibrary", "Question1MovieLibrary\MovieLibrary\MovieLibrary.csproj", "{74C0A78B-D8FA-3541-EA5E-98822E4488AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74C0A78B-D8FA-3541-EA5E-98822E4488AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C0A78B-D8FA-3541-EA5E-98822E4488AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C0A78B-D8FA-3541-EA5E-98822E4488AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C0A78B-D8FA-3541-EA5E-98822E4488AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74C0A78B-D8FA-3541-EA5E-98822E4488AE} = {9F550A88-4AF6-4307-0E3D-A1CD56108340}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21D4BA3A-0EC4-4DA2-81A3-13B839050961}
+	EndGlobalSection
+EndGlobal
