@@ -3,84 +3,50 @@ using System.Text;
 
 namespace computerscienceinstructor
 {
-	/// <summary>
-	/// Program for generating flip keys from input strings.
-	/// </summary>
-	internal class Program
-	{
-		#region Public Methods
+    internal class Program
+    {
+        public static string CleanseAndInvert(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input) || input.Length < 6)
+                return string.Empty;
 
-		/// <summary>
-		/// Cleanses input string and inverts it based on character filtering and transformation rules.
-		/// </summary>
-		/// <param name="input">The input string to process</param>
-		/// <returns>The processed key or empty string if invalid</returns>
-		public string CleanseAndInvert(string input)
-		{
-			if (string.IsNullOrEmpty(input) || input.Length < 6)
-			{
-				return string.Empty;
-			}
+            foreach (char ch in input)
+            {
+                if (!char.IsLetter(ch))
+                    return string.Empty;
+            }
 
-			foreach (char ch in input)
-			{
-				if (!char.IsLetter(ch))
-				{
-					return string.Empty;
-				}
-			}
+            StringBuilder filtered = new StringBuilder();
 
-			string lower = input.ToLower();
-			StringBuilder filtered = new StringBuilder();
+            foreach (char ch in input.ToLower())
+            {
+                if (ch % 2 != 0)
+                    filtered.Append(ch);
+            }
 
-			foreach (char ch in lower)
-			{
-				if (((int)ch) % 2 != 0)
-				{
-					filtered.Append(ch);
-				}
-			}
+            char[] result = filtered.ToString().ToCharArray();
+            Array.Reverse(result);
 
-			char[] reversed = filtered.ToString().ToCharArray();
-			Array.Reverse(reversed);
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (i % 2 == 0)
+                    result[i] = char.ToUpper(result[i]);
+            }
 
-			for (int i = 0; i < reversed.Length; i++)
-			{
-				if (i % 2 == 0)
-				{
-					reversed[i] = char.ToUpper(reversed[i]);
-				}
-			}
+            return new string(result);
+        }
 
-			return new string(reversed);
-		}
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the word");
+            string input = Console.ReadLine();
 
-		#endregion
+            string result = CleanseAndInvert(input);
 
-		#region Entry Point
-
-		/// <summary>
-		/// Entry point of the application.
-		/// </summary>
-		/// <param name="args">Command-line arguments</param>
-		private static void Main(string[] args)
-		{
-			Console.WriteLine("Enter the word");
-			string input = Console.ReadLine();
-
-			Program program = new Program();
-			string result = program.CleanseAndInvert(input);
-
-			if (string.IsNullOrEmpty(result))
-			{
-				Console.WriteLine("Invalid Input");
-			}
-			else
-			{
-				Console.WriteLine($"The generated key is - {result}");
-			}
-		}
-
-		#endregion
-	}
+            if (string.IsNullOrEmpty(result))
+                Console.WriteLine("Invalid Input");
+            else
+                Console.WriteLine($"The generated key is - {result}");
+        }
+    }
 }

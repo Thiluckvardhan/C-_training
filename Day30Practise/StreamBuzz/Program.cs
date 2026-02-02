@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
+#region Models
+
+/// <summary>
+/// Represents statistics for a content creator on StreamBuzz.
+/// </summary>
 public class CreatorStats
 {
     public string CreatorName { get; set; }
@@ -10,13 +15,34 @@ public class CreatorStats
     public static List<CreatorStats> EngagementBoard { get; set; } = new List<CreatorStats>();
 }
 
+#endregion
+
+/// <summary>
+/// Main program for managing creator engagement and analytics on StreamBuzz.
+/// </summary>
 public class Program
 {
+    #region Creator Management
+
+    /// <summary>
+    /// Registers a new creator to the engagement board.
+    /// </summary>
+    /// <param name="record">The creator statistics to register</param>
     public void RegisterCreator(CreatorStats record)
     {
         CreatorStats.EngagementBoard.Add(record);
     }
 
+    #endregion
+
+    #region Analytics
+
+    /// <summary>
+    /// Gets the count of posts exceeding the like threshold for each creator.
+    /// </summary>
+    /// <param name="records">List of creator statistics to analyze</param>
+    /// <param name="likeThreshold">The minimum number of likes required</param>
+    /// <returns>Dictionary with creator names and their top post counts</returns>
     public Dictionary<string, int> GetTopPostCounts(List<CreatorStats> records, double likeThreshold)
     {
         Dictionary<string, int> result = new Dictionary<string, int>();
@@ -41,6 +67,10 @@ public class Program
         return result;
     }
 
+    /// <summary>
+    /// Calculates the average weekly likes across all creators.
+    /// </summary>
+    /// <returns>The average number of likes per week</returns>
     public double CalculateAverageLikes()
     {
         if (CreatorStats.EngagementBoard.Count == 0)
@@ -63,6 +93,14 @@ public class Program
         return totalWeeks > 0 ? totalLikes / totalWeeks : 0;
     }
 
+    #endregion
+
+    #region Entry Point
+
+    /// <summary>
+    /// Entry point of the application. Displays menu and handles user interactions.
+    /// </summary>
+    /// <param name="args">Command-line arguments</param>
     public static void Main(string[] args)
     {
         Program program = new Program();
@@ -141,4 +179,6 @@ public class Program
             }
         }
     }
+
+    #endregion
 }
