@@ -1,109 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 #region Models
 
-/// <summary>
-/// Represents statistics for a content creator on StreamBuzz.
-/// </summary>
 public class CreatorStats
 {
     public string CreatorName { get; set; }
     public double[] WeeklyLikes { get; set; }
-    
-    public static List<CreatorStats> EngagementBoard { get; set; } = new List<CreatorStats>();
+
+    public static List<CreatorStats> EngagementBoard { get; } = new List<CreatorStats>();
+
+    public static void RegisterCreator(CreatorStats record)
+    {
+        EngagementBoard.Add(record);
+    }
+
+    public static Dictionary<string, int> GetTopPostCounts(double likeThreshold)
+    {
+        Dictionary<string, int> result = new Dictionary<string, int>();
+
+        foreach (var creator in EngagementBoard)
+        {
+            int count = 0;
+
+            foreach (var likes in creator.WeeklyLikes)
+            {
+                if (likes >= likeThreshold)
+                    count++;
+            }
+
+            if (count > 0)
+                result.Add(creator.CreatorName, count);
+        }
+
+        return result;
+    }
+
+    public static double CalculateAverageLikes()
+    {
+        double totalLikes = 0;
+        int totalWeeks = 0;
+
+        foreach (var creator in EngagementBoard)
+        {
+            foreach (var likes in creator.WeeklyLikes)
+                totalLikes += likes;
+
+            totalWeeks += creator.WeeklyLikes.Length;
+        }
+
+        return totalWeeks == 0 ? 0 : totalLikes / totalWeeks;
+    }
 }
 
 #endregion
 
-/// <summary>
-/// Main program for managing creator engagement and analytics on StreamBuzz.
-/// </summary>
 public class Program
 {
-    #region Creator Management
+    private const int Weeks = 4;
 
-    /// <summary>
-    /// Registers a new creator to the engagement board.
-    /// </summary>
-    /// <param name="record">The creator statistics to register</param>
-    public void RegisterCreator(CreatorStats record)
-    {
-        CreatorStats.EngagementBoard.Add(record);
-    }
-
-    #endregion
-
-    #region Analytics
-
-    /// <summary>
-    /// Gets the count of posts exceeding the like threshold for each creator.
-    /// </summary>
-    /// <param name="records">List of creator statistics to analyze</param>
-    /// <param name="likeThreshold">The minimum number of likes required</param>
-    /// <returns>Dictionary with creator names and their top post counts</returns>
-    public Dictionary<string, int> GetTopPostCounts(List<CreatorStats> records, double likeThreshold)
-    {
-        Dictionary<string, int> result = new Dictionary<string, int>();
-        
-        foreach (var creator in records)
-        {
-            int count = 0;
-            foreach (var likes in creator.WeeklyLikes)
-            {
-                if (likes >= likeThreshold)
-                {
-                    count++;
-                }
-            }
-            
-            if (count > 0)
-            {
-                result[creator.CreatorName] = count;
-            }
-        }
-        
-        return result;
-    }
-
-    /// <summary>
-    /// Calculates the average weekly likes across all creators.
-    /// </summary>
-    /// <returns>The average number of likes per week</returns>
-    public double CalculateAverageLikes()
-    {
-        if (CreatorStats.EngagementBoard.Count == 0)
-        {
-            return 0;
-        }
-        
-        double totalLikes = 0;
-        int totalWeeks = 0;
-        
-        foreach (var creator in CreatorStats.EngagementBoard)
-        {
-            foreach (var likes in creator.WeeklyLikes)
-            {
-                totalLikes += likes;
-            }
-            totalWeeks += creator.WeeklyLikes.Length;
-        }
-        
-        return totalWeeks > 0 ? totalLikes / totalWeeks : 0;
-    }
-
-    #endregion
-
-    #region Entry Point
-
-    /// <summary>
-    /// Entry point of the application. Displays menu and handles user interactions.
-    /// </summary>
-    /// <param name="args">Command-line arguments</param>
     public static void Main(string[] args)
     {
-        Program program = new Program();
         bool running = true;
 
         while (running)
@@ -113,58 +70,56 @@ public class Program
             Console.WriteLine("3. Calculate Average Likes");
             Console.WriteLine("4. Exit");
             Console.WriteLine("Enter your choice:");
-            
+
             string choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
                     Console.WriteLine("Enter Creator Name:");
-                    string creatorName = Console.ReadLine();
-                    
-                    Console.WriteLine("Enter weekly likes (Week 1 to 4):");
-                    double[] weeklyLikes = new double[4];
-                    
-                    for (int i = 0; i < 4; i++)
+                    string name = Console.ReadLine();
+
+                    double[] likes = new double[Weeks];
+                    Console.WriteLine("Enter weekly likes:");
+
+                    for (int i = 0; i < Weeks; i++)
                     {
-                        weeklyLikes[i] = double.Parse(Console.ReadLine());
+                        while (!double.TryParse(Console.ReadLine(), out likes[i]))
+                        {
+                            Console.WriteLine("Invalid input. Enter a number:");
+                        }
                     }
-                    
-                    CreatorStats newCreator = new CreatorStats
+
+                    CreatorStats.RegisterCreator(new CreatorStats
                     {
-                        CreatorName = creatorName,
-                        WeeklyLikes = weeklyLikes
-                    };
-                    
-                    program.RegisterCreator(newCreator);
-                    Console.WriteLine("Creator registered successfully");
-                    Console.WriteLine();
+                        CreatorName = name,
+                        WeeklyLikes = likes
+                    });
+
+                    Console.WriteLine("Creator registered successfully\n");
                     break;
 
                 case "2":
                     Console.WriteLine("Enter like threshold:");
-                    double threshold = double.Parse(Console.ReadLine());
-                    
-                    Dictionary<string, int> topPosts = program.GetTopPostCounts(CreatorStats.EngagementBoard, threshold);
-                    
-                    if (topPosts.Count == 0)
+                    if (double.TryParse(Console.ReadLine(), out double threshold))
                     {
-                        Console.WriteLine("No top-performing posts this week");
+                        var results = CreatorStats.GetTopPostCounts(threshold);
+
+                        if (results.Count == 0)
+                            Console.WriteLine("No top-performing posts");
+                        else
+                            foreach (var item in results)
+                                Console.WriteLine($"{item.Key} - {item.Value}");
                     }
                     else
                     {
-                        foreach (var entry in topPosts)
-                        {
-                            Console.WriteLine($"{entry.Key} - {entry.Value}");
-                        }
+                        Console.WriteLine("Invalid threshold");
                     }
                     Console.WriteLine();
                     break;
 
                 case "3":
-                    double average = program.CalculateAverageLikes();
-                    Console.WriteLine($"Overall average weekly likes: {average}");
-                    Console.WriteLine();
+                    Console.WriteLine($"Overall average weekly likes: {CreatorStats.CalculateAverageLikes()}\n");
                     break;
 
                 case "4":
@@ -173,12 +128,9 @@ public class Program
                     break;
 
                 default:
-                    Console.WriteLine("Invalid choice. Please try again.");
-                    Console.WriteLine();
+                    Console.WriteLine("Invalid choice\n");
                     break;
             }
         }
     }
-
-    #endregion
 }
