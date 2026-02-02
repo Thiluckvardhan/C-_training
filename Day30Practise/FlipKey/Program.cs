@@ -3,8 +3,18 @@ using System.Text;
 
 namespace computerscienceinstructor
 {
+	/// <summary>
+	/// Program for generating flip keys from input strings.
+	/// </summary>
 	internal class Program
 	{
+		#region Public Methods
+
+		/// <summary>
+		/// Cleanses input string and inverts it based on character filtering and transformation rules.
+		/// </summary>
+		/// <param name="input">The input string to process</param>
+		/// <returns>The processed key or empty string if invalid</returns>
 		public string CleanseAndInvert(string input)
 		{
 			if (string.IsNullOrEmpty(input) || input.Length < 6)
@@ -45,6 +55,14 @@ namespace computerscienceinstructor
 			return new string(reversed);
 		}
 
+		#endregion
+
+		#region Entry Point
+
+		/// <summary>
+		/// Entry point of the application.
+		/// </summary>
+		/// <param name="args">Command-line arguments</param>
 		private static void Main(string[] args)
 		{
 			Console.WriteLine("Enter the word");
@@ -62,5 +80,7 @@ namespace computerscienceinstructor
 				Console.WriteLine($"The generated key is - {result}");
 			}
 		}
+
+		#endregion
 	}
 }
